@@ -1,7 +1,6 @@
 from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 
-import apiv1
 
 # Flask App
 app = Flask(__name__)
@@ -18,6 +17,8 @@ app.config['API_PREFIX'] = 'api'
 db = MongoEngine(app)
 
 # Blueprints
+import apiv1
+
 app.register_blueprint(
     apiv1.blueprint,
     url_prefix='/{0}/v{1}'.format(

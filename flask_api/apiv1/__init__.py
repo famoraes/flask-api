@@ -9,4 +9,6 @@ blueprint = Blueprint('v1', __name__)
 api = Api(blueprint)
 
 # Resources
-api.add_resource(AuthorController, '/authors/')
+api.add_resource(AuthorController,
+    '/authors/',
+    '/authors/<id>')
